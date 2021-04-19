@@ -1,0 +1,324 @@
+:root {
+  --neutrals-darkest: #0c0e14;
+  --neutrals-dark: #10141f;
+  --neutrals-medium: #334466;
+  --neutrals-light: #59709e;
+  --neutrals-lightest: #87a5e0;
+
+  --accent-color: #2eb2e5;
+
+  --halo: drop-shadow(0px 0px 16px rgba(60, 208, 255, 0.8))
+    drop-shadow(0px 0px 4px rgba(59, 208, 255, 0.48));
+
+  --halo2: drop-shadow(0px 0px 32px rgba(60, 208, 255, 0.4))
+    drop-shadow(0px 0px 8px rgba(59, 208, 255, 0.8));
+}
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #fff;
+  background: var(--accent-color);
+}
+
+html {
+  background: var(--neutrals-darkest);
+  font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
+}
+
+p {
+  color: var(--neutrals-medium);
+  font-size: 1.2rem;
+  font-weight: 100;
+  line-height: 152%;
+}
+
+.container {
+  width: min(90vw, 960px);
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100vw;
+  height: 100vh;
+  background: url(./assets/ivo-stinghen-hero-bg.svg) center no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4rem 4rem 0 4rem;
+  z-index: 1000;
+}
+
+.profile {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  z-index: 1001;
+}
+
+.profile .avatar {
+  width: 4rem;
+  height: 4rem;
+  padding: 0.2rem;
+  border-radius: 500px;
+  border: 4px solid var(--accent-color);
+}
+
+.profile .avatar img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.profile h3 {
+  color: var(--neutrals-medium);
+  font-size: 1.6rem;
+  font-weight: 100;
+  margin-left: 1rem;
+}
+
+.social-networks {
+  display: flex;
+  padding: 0.8rem 1.3rem;
+  border-radius: 500px;
+  background: var(--neutrals-dark);
+  color: var(--neutrals-medium);
+  z-index: 1002;
+}
+
+.social-networks a {
+  padding: 0.5rem;
+  margin-left: 1.5rem;
+  text-align: center;
+  line-height: 0;
+  font-size: 1.2rem;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: all 0.2s ease-out;
+}
+
+.social-networks a:hover {
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  filter: var(--halo);
+}
+
+.social-networks a:first-child {
+  margin-left: 0;
+}
+
+.hero > h1 {
+  width: min(80vw, 1080px);
+  padding: 0rem 0 4rem 4rem;
+  color: var(--accent-color);
+  font-size: 3.2rem;
+  background: linear-gradient(215deg, var(--accent-color) -10%, #005491 125%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.about,
+.experience {
+  margin-top: 16rem;
+}
+
+.about h2,
+.experience h2 {
+  display: inline;
+  color: var(--neutrals-dark);
+  font-size: 14rem;
+  font-weight: 700;
+  letter-spacing: -0.25rem;
+  line-height: 0.1;
+  background: linear-gradient(
+    180deg,
+    var(--neutrals-medium) -100%,
+    var(--neutrals-darkest) 70%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.about > p {
+  margin-top: -5rem;
+  padding: 2rem 6rem 2rem 2rem;
+}
+
+.about ul {
+  display: flex;
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+.about ul li {
+  display: flex;
+  align-items: flex-end;
+}
+
+.about ul li:first-child {
+  margin-right: 5vw;
+}
+
+.about ul li i {
+  color: var(--neutrals-medium);
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+.about ul li span h4 {
+  color: var(--neutrals-medium);
+  font-size: 0.8rem;
+  opacity: 0.64;
+}
+
+.experience ul {
+  padding: 1rem;
+  margin-top: -5rem;
+}
+
+.experience ul li {
+  margin-bottom: 4rem;
+}
+
+.experience ul li:last-child {
+  margin-bottom: 8rem;
+}
+
+.experience ul li p.experience-number {
+  display: inline;
+  color: var(--accent-color);
+}
+
+.experience ul li h3 {
+  display: inline;
+  color: var(--neutrals-medium);
+  font-size: 3rem;
+}
+
+.experience ul li:hover {
+  cursor: none;
+}
+
+.experience ul li:hover h3 {
+  color: var(--accent-color);
+  transition: all 0.3s ease-out;
+}
+
+.experience .experience-details {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  opacity: 0.56;
+}
+
+.experience-details p {
+  flex-basis: auto;
+  flex-grow: 0;
+}
+
+.experience-details span {
+  display: inline-block;
+  flex-basis: 0;
+  flex-grow: 1;
+  height: 0;
+  border-bottom: 1px solid var(--neutrals-medium);
+  margin: 0.15rem 1rem 0 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+  header {
+    position: absolute;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  .profile {
+    padding: 0 2rem;
+  }
+  .profile .avatar {
+    border: 2px solid var(--accent-color);
+  }
+
+  .social-networks {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    border-radius: 0;
+  }
+
+  .hero > h1 {
+    font-size: 2rem;
+    padding: 0 0 2rem 2rem;
+  }
+
+  .about,
+  .experience {
+    margin-top: 10rem;
+  }
+
+  .about h2,
+  .experience h2 {
+    font-size: 7rem;
+  }
+
+  .about > p {
+    margin-top: -2.5rem;
+    padding: 1rem;
+  }
+
+  .about ul {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem 0 1rem;
+  }
+
+  .about ul li:first-child {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .experience ul {
+    margin-top: -2rem;
+  }
+
+  .experience ul li {
+    display: flex;
+    flex-direction: column;
+  }
+  .experience ul li h3 {
+    font-size: 2.5rem;
+  }
+
+  .experience-details span {
+    display: inline-block;
+    width: 100%;
+    flex-basis: 0;
+    flex-grow: 1;
+    margin: 1rem 0;
+  }
+
+  .experience .experience-details {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+  }
+}
